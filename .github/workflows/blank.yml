@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Check PR labels action step
-        uses: Slashgear/action-check-pr-title@2.0.0
+        uses: Slashgear/action-check-pr-title@3.0.0
         with:
             regex: '([a-z])+'
             github-token: '${{ secrets.GITHUB_TOKEN }}'
