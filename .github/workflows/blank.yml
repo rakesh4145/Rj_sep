@@ -1,9 +1,7 @@
 name: CI
 
 on:
- 
-  push:
-    branches: [ "main" ]
+
   pull_request:
     types: [opened, labeled, unlabeled, synchronize]
     branches: [ "main" ]
@@ -14,12 +12,10 @@ jobs:
 
     steps:
       - name: Check PR labels action step
-        uses: jesusvasquez333/verify-pr-label-action@v1.4.0
+        uses: Slashgear/action-check-pr-title@2.0.0
         with:
+            regex: '([a-z])+'
             github-token: '${{ secrets.GITHUB_TOKEN }}'
-            valid-labels: 'bug, enhancement'
-            invalid-labels: 'help wanted, invalid'
-            pull-request-number: '${{ github.event.pull_request.number }}'
       - name: Run a one-line script
         run: pwd
 
