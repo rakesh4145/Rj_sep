@@ -3,10 +3,10 @@ name: CI
 on:
  
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
     types: [opened, labeled, unlabeled, synchronize]
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   check_PR_message:
