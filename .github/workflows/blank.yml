@@ -1,0 +1,25 @@
+name: CI
+
+on:
+ 
+  push:
+    branches: [ "master" ]
+  pull_request:
+    types: [opened, labeled, unlabeled, synchronize]
+    branches: [ "master" ]
+
+jobs:
+  check_PR_message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check PR labels action step
+        uses: jesusvasquez333/verify-pr-label-action@v1.4.0
+        with:
+            github-token: '${{ secrets.GITHUB_TOKEN }}'
+            valid-labels: 'bug, enhancement'
+            invalid-labels: 'help wanted, invalid'
+            pull-request-number: '${{ github.event.pull_request.number }}'
+      - name: Run a one-line script
+        run: pwd
+
