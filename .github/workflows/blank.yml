@@ -15,5 +15,5 @@ jobs:
       with:
           regex: 'JIRA|Mira' # Regex the title should match.
           regex_options: 'i' # Regex should be case insensitive.
-          custom_non_match_error: 'valid title options are ... JIRA, Mira
+          custom_non_match_error: 'valid title options are ... JIRA, Mira'
 
