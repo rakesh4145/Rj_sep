@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-       - uses: robin-thomas-e1391/PR-title-validator@master
-         with:
-            regex: 'JIRA|Mira' # Regex the title should match.
-            regex_options: 'i' # Regex should be case insensitive.
-            custom_non_match_error: 'valid title options are ... JIRA, Mira
+    - uses: robin-thomas-e1391/PR-title-validator@master
+      with:
+          regex: 'JIRA|Mira' # Regex the title should match.
+          regex_options: 'i' # Regex should be case insensitive.
+          custom_non_match_error: 'valid title options are ... JIRA, Mira
 
